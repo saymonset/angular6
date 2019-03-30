@@ -3,14 +3,24 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
+import { SaymonComponent } from './saymon/saymon.component';
+
+import { FormsModule } from "@angular/forms";
+
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    
+    SaymonComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [SaymonComponent]
 })
 export class AppModule { }
+
+
+ 
