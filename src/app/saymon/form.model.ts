@@ -1,5 +1,5 @@
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-
+import { LimitValidator } from "./limit.formvalidator";
 export class ProductFormControl extends FormControl {
 	label: string;
 	modelProperty: string;
@@ -17,22 +17,26 @@ export class ProductFormControl extends FormControl {
 					for (let errorName in this.errors) {
 							switch (errorName) {
 									case "required":
-									messages.push(`You must enter a ${this.label}`);
-									break;
+										messages.push(`You must enter a ${this.label}`);
+										break;
 									case "minlength":
-									messages.push(`A ${this.label} must be at least
-									${this.errors['minlength'].requiredLength}
-									characters`);
-									break;
+										messages.push(`A ${this.label} must be at least
+										${this.errors['minlength'].requiredLength}
+										characters`);
+										break;
 									case "maxlength":
-									messages.push(`A ${this.label} must be no more than
-									${this.errors['maxlength'].requiredLength}
-									characters`);
-									break;
+										messages.push(`A ${this.label} must be no more than
+										${this.errors['maxlength'].requiredLength}
+										characters`);
+										break;
 									case "pattern":
-									messages.push(`The ${this.label} contains
-									illegal characters`);
-									break;
+										messages.push(`The ${this.label} contains
+										illegal characters`);
+										break;
+									case "limit":
+										messages.push(`A ${this.label} cannot be more
+										than ${this.errors['limit'].limit}`);
+										break;
 							}
 					}
 				}
@@ -60,6 +64,7 @@ super({
 
 		price: new ProductFormControl("Price Simons", "price", "",
 			Validators.compose([Validators.required,
+				LimitValidator.Limit(100),
 				Validators.pattern("^[0-9\.]+$")]))
 		});
 }
