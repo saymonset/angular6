@@ -50,15 +50,15 @@ export class ProductFormGroup extends FormGroup {
 constructor() {
 super({
 	
-		name: new ProductFormControl("Name", "name", "", Validators.required),
+		name: new ProductFormControl("Name Simons", "name", "", Validators.required),
 
-		category: new ProductFormControl("Category", "category", "",
+		category: new ProductFormControl("Category Simons", "category", "",
 			Validators.compose([Validators.required,
 				Validators.pattern("^[A-Za-z ]+$"),
 				Validators.minLength(3),
 				Validators.maxLength(10)])),
 
-		price: new ProductFormControl("Price", "price", "",
+		price: new ProductFormControl("Price Simons", "price", "",
 			Validators.compose([Validators.required,
 				Validators.pattern("^[0-9\.]+$")]))
 		});
