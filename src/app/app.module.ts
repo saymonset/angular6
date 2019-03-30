@@ -10,13 +10,16 @@ import { PaAttrDirective } from "./saymon/attr.directive";
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
+import { PaModel } from "./saymon/twoway.directive";
+
 @NgModule({
 
   declarations: [
     AppComponent,
     
     SaymonComponent,
-    PaAttrDirective
+    PaAttrDirective,
+    PaModel
   ],
   imports: [
     BrowserModule,

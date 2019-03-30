@@ -3,7 +3,6 @@
 		Selected Product: {{selectedProduct || '(None)'}}
 	</div>
 
- 
 
 <table class="table table-sm table-bordered">
 <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
@@ -69,12 +68,16 @@
 		</form>
     </div>
 	<div class="col-6">
+
+		
+			<div class="form-group bg-info text-white p-2">
+				<label>Name:</label>
+				<input class="bg-primary text-white" [paModel]="newProduct.name"
+				(paModelChange)="newProduct.name=$event" />
+			</div> 
 			<table class="table table-sm table-bordered table-striped">
 				<tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
-			 
-		 
-
-<tr *ngFor="let item of getProducts(); let i = index"
+				<tr *ngFor="let item of getProducts(); let i = index"
 				[pa-attr]="getProducts().length < 6 ? 'bg-success' : 'bg-warning'"
 				[pa-product]="item" (pa-category)="newProduct.category=$event">
 
