@@ -2,6 +2,7 @@ import { ApplicationRef, Component } from '@angular/core';
 import { Model } from "./repository.model";
 import { NgForm } from "@angular/forms";
 import { Product } from "./product.model";
+import { ProductFormGroup } from "./form.model";
 @Component({
   selector: 'app-saymon',
   templateUrl: './saymon.component.html',
@@ -16,6 +17,9 @@ export class SaymonComponent {
 				}
 		 
 		 model: Model = new Model();
+		 form: ProductFormGroup = new ProductFormGroup();
+
+
 		getProduct(key: number): Product {
 			return this.model.getProduct(key);
 		}
