@@ -42,6 +42,7 @@ export class SaymonComponent {
 			}
 			
 		addProduct(p: Product) {
+			 this.model.saveProduct(p);
 			console.log("New Product: " + this.jsonProduct);
 			}
 
@@ -74,8 +75,10 @@ export class SaymonComponent {
 			formSubmitted: boolean = false;
 
 			submitForm(form: NgForm) {
+			 
 					this.formSubmitted = true;
 					if (form.valid) {
+
 							this.addProduct(this.newProduct);
 							this.newProduct = new Product();
 							form.reset();

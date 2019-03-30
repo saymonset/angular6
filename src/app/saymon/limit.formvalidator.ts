@@ -1,3 +1,4 @@
+import { FormControl } from "@angular/forms";
 export class LimitValidator {
 		static Limit(limit:number) {
 			return (control:FormControl) : {[key: string]: any} => {
