@@ -4,6 +4,8 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 
 import { SaymonComponent } from './saymon/saymon.component';
+
+import { PaAttrDirective } from "./saymon/attr.directive";
  
 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -13,7 +15,8 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
   declarations: [
     AppComponent,
     
-    SaymonComponent
+    SaymonComponent,
+    PaAttrDirective
   ],
   imports: [
     BrowserModule,
