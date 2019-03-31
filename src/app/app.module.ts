@@ -12,6 +12,16 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { PaModel } from "./saymon/twoway.directive";
 
+
+import { PaStructureDirective } from "./saymon/structure.directive";
+
+import { PaIteratorDirective } from "./saymon/iterator.directive";
+
+import { PaCellColor } from "./saymon/cellColor.directive";
+
+import { PaCellColorSwitcher } from "./saymon/cellColorSwitcher.directive";
+
+
 @NgModule({
 
   declarations: [
@@ -19,7 +29,11 @@ import { PaModel } from "./saymon/twoway.directive";
     
     SaymonComponent,
     PaAttrDirective,
-    PaModel
+    PaModel,
+    PaStructureDirective,
+    PaIteratorDirective,
+    PaCellColor,
+    PaCellColorSwitcher
   ],
   imports: [
     BrowserModule,

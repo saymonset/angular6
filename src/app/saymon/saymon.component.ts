@@ -10,7 +10,7 @@ import { ProductFormGroup } from "./form.model";
 })
 export class SaymonComponent {
  
-
+showTable: boolean = true;
 		constructor(ref: ApplicationRef) {
 				(<any>window).appRef = ref;
 				(<any>window).model = this.model;
@@ -46,6 +46,9 @@ export class SaymonComponent {
 			console.log("New Product: " + this.jsonProduct);
 			}
 
+			deleteProduct(key: number) {
+				this.model.deleteProduct(key);
+			}
 
 
 			getValidationMessages(state: any, thingName?: string) {
