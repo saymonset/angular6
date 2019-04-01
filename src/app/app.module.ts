@@ -21,6 +21,12 @@ import { PaCellColor } from "./saymon/cellColor.directive";
 
 import { PaCellColorSwitcher } from "./saymon/cellColorSwitcher.directive";
 
+import { ProductTableComponent } from "./saymon/productTable.component";
+
+import { ProductFormComponent } from "./saymon/productForm.component";
+
+import { PaToggleView } from "./saymon/toggleView.component";
+
 
 @NgModule({
 
@@ -33,7 +39,10 @@ import { PaCellColorSwitcher } from "./saymon/cellColorSwitcher.directive";
     PaStructureDirective,
     PaIteratorDirective,
     PaCellColor,
-    PaCellColorSwitcher
+    PaCellColorSwitcher,
+    ProductTableComponent,
+    ProductFormComponent,
+    PaToggleView
   ],
   imports: [
     BrowserModule,
