@@ -24,6 +24,8 @@ deleteProduct(key: number) {
 	this.dataModel.deleteProduct(key);
 }
 
-	showTable: boolean = true;
+dateObject: Date = new Date();
+dateString: string = "2020-02-20T00:00:00.000Z";
+dateNumber: number = 1582156800000;
 
 }

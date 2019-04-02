@@ -27,7 +27,13 @@ import { ProductFormComponent } from "./saymon/productForm.component";
 
 import { PaToggleView } from "./saymon/toggleView.component";
 
+import { PaAddTaxPipe } from "./saymon/addTax.pipe";
 
+import { PaCategoryFilterPipe } from "./saymon/categoryFilter.pipe";
+import { LOCALE_ID } from "@angular/core";
+import localeFr from '@angular/common/locales/fr';
+import { registerLocaleData } from '@angular/common';
+registerLocaleData(localeFr);
 @NgModule({
 
   declarations: [
@@ -42,14 +48,16 @@ import { PaToggleView } from "./saymon/toggleView.component";
     PaCellColorSwitcher,
     ProductTableComponent,
     ProductFormComponent,
-    PaToggleView
+    PaToggleView,
+    PaAddTaxPipe,
+    PaCategoryFilterPipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+ // providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
   bootstrap: [SaymonComponent]
 })
 export class AppModule { }
