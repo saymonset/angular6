@@ -30,10 +30,29 @@ import { PaToggleView } from "./saymon/toggleView.component";
 import { PaAddTaxPipe } from "./saymon/addTax.pipe";
 
 import { PaCategoryFilterPipe } from "./saymon/categoryFilter.pipe";
+
+import { PaDiscountDisplayComponent } from "./saymon/discountDisplay.component";
+
+import { PaDiscountEditorComponent } from "./saymon/discountEditor.component";
+
+import { DiscountService } from "./saymon/discount.service";
+
+import { PaDiscountPipe } from "./saymon/discount.pipe";
+
 import { LOCALE_ID } from "@angular/core";
+
 import localeFr from '@angular/common/locales/fr';
+
 import { registerLocaleData } from '@angular/common';
+
+import { PaDiscountAmountDirective } from "./saymon/discountAmount.directive";
+
+import { SimpleDataSource } from "./saymon/datasource.model";
+
+import { Model } from "./saymon/repository.model";
+
 registerLocaleData(localeFr);
+
 @NgModule({
 
   declarations: [
@@ -50,14 +69,18 @@ registerLocaleData(localeFr);
     ProductFormComponent,
     PaToggleView,
     PaAddTaxPipe,
-    PaCategoryFilterPipe
+    PaCategoryFilterPipe,
+    PaDiscountDisplayComponent,
+    PaDiscountEditorComponent,
+    PaDiscountPipe,
+    PaDiscountAmountDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ],
- // providers: [{ provide: LOCALE_ID, useValue: "fr-FR" }],
+  providers: [DiscountService,{ provide: LOCALE_ID, useValue: "fr-FR" },SimpleDataSource, Model],
   bootstrap: [SaymonComponent]
 })
 export class AppModule { }

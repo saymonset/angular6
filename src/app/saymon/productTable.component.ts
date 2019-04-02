@@ -1,7 +1,7 @@
 import { Component, Input } from "@angular/core";
 import { Model } from "./repository.model";
 import { Product } from "./product.model";
-
+import { DiscountService } from "./discount.service";
 @Component({
 selector: "paProductTable",
 templateUrl: "productTable.component.html"
@@ -9,8 +9,12 @@ templateUrl: "productTable.component.html"
 
 export class ProductTableComponent {
 
-@Input("model")
-dataModel: Model;
+//discounter: DiscountService = new DiscountService();
+
+//@Input("model")
+//dataModel: Model;
+
+constructor(private dataModel: Model) { }
 
 getProduct(key: number): Product {
 	return this.dataModel.getProduct(key);
