@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-debugger;
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -10,4 +8,3 @@ debugger;
 export class AppComponent {
   title = 'app';
 }
-
